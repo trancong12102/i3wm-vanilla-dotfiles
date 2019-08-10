@@ -1,0 +1,6 @@
+[user]
+	signingkey = 43BE4E8B350E78DA
+	email = nopain2110@gmail.com
+	name = Trần Công
+[commit]
+	gpgsign = true
