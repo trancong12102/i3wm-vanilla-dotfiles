@@ -56,7 +56,6 @@ set() {
 }
 
 up() {
-    shift=1
     val_u=$1
     
     if [ -z "$1" ];
@@ -69,7 +68,6 @@ up() {
 }
 
 down() {
-    shift=1
     val_d=$1
     
     if [ -z "$1" ];
@@ -97,7 +95,12 @@ toggle() {
 }
 
 init() {
-    reset
+    if [ "$shift" -eq "0" ]; 
+    then
+        reset
+    else
+        set
+    fi
 }
 
 if [ "$1" = "u" ];
