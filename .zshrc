@@ -68,7 +68,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenv virtualenvwrapper fast-syntax-highlighting)
+plugins=(git virtualenv virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -158,17 +158,18 @@ POWERLEVEL9K_OK_ICON=''
 POWERLEVEL9K_FAIL_ICON=''
 
 ## VCS
-POWERLEVEL9K_VCS_GIT_ICON=" "
-POWERLEVEL9K_VCS_GIT_GITHUB_ICON=" "
-POWERLEVEL9K_VCS_BRANCH_ICON=" "
-POWERLEVEL9K_VCS_UNTRACKED_ICON="\u25CF "
-POWERLEVEL9K_VCS_UNSTAGED_ICON=" "
-POWERLEVEL9K_VCS_STASH_ICON=" " 
-POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=" "
-POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=" "
-POWERLEVEL9K_VCS_COMMIT_ICON=" "
+POWERLEVEL9K_VCS_GIT_ICON=''
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON=''
+POWERLEVEL9K_VCS_BRANCH_ICON=' '
+POWERLEVEL9K_VCS_UNTRACKED_ICON=''
+POWERLEVEL9K_VCS_UNSTAGED_ICON=''
+POWERLEVEL9K_VCS_STAGED_ICON=''
+POWERLEVEL9K_VCS_STASH_ICON='' 
+POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=''
+POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=''
+POWERLEVEL9K_VCS_COMMIT_ICON=''
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND='none'
-POWERLEVEL9K_VCS_CLEAN_FOREGROUND='076'
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND='002'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='none'
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='005'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='none'
@@ -191,10 +192,10 @@ ZSH_HIGHLIGHT_STYLES[builtin]=fg='#B39FD5'
 ZSH_HIGHLIGHT_STYLES[function]=fg='#B39FD5'
 ZSH_HIGHLIGHT_STYLES[command]=fg='#B39FD5'
 ZSH_HIGHLIGHT_STYLES[precommand]=fg='#B39FD5',underline
-ZSH_HIGHLIGHT_STYLES[commandseparator]=fg='#786fa6'
+ZSH_HIGHLIGHT_STYLES[commandseparator]=fg='#EAABBC'
 ZSH_HIGHLIGHT_STYLES[hashed-command]=fg='#F7C6BE'
 ZSH_HIGHLIGHT_STYLES[path]=fg='#71BBEE',underline
-ZSH_HIGHLIGHT_STYLES[globbing]=fg='#786fa6'
+ZSH_HIGHLIGHT_STYLES[globbing]=fg='#E7D3BF'
 ZSH_HIGHLIGHT_STYLES[history-expansion]=fg='#778beb',underline
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg='#F3BE95'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg='#F1CBB5'
@@ -207,7 +208,7 @@ ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg='#f5cd79'
 ZSH_HIGHLIGHT_STYLES[assign]='#F7C6BE'
 
 ## 
-alias ls="lsd --group-dirs first --color=auto"
+alias ls="lsd -l --group-dirs first --color=auto"
 # alias neofetch="neofetch | lolcat -a -s 3000"
 alias pacman="pacman --color=auto"
 alias yay="yay --color=auto"

@@ -97,18 +97,8 @@ toggle() {
 }
 
 init() {
-    if [ "$shift" -eq "1" ];
-    then
-        set
-    else
-        reset
-    fi
-}
-
-if [ "$1" = "r" ];
-then
     reset
-fi
+}
 
 if [ "$1" = "u" ];
 then 

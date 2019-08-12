@@ -89,7 +89,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -204,9 +204,6 @@ exec --no-startup-id compton -b
 exec --no-startup-id xsettingsd 
 exec --no-startup-id ibus-daemon -drx
 
-exec --no-startup-id killall launch.sh
-exec --no-startup-id ~/.config/i3status/scripts/launch.sh
-
 #------------------------------------------------------------------
 # Bindings
 
@@ -228,7 +225,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym Print exec gnome-screenshot -i
 
 # ibus man 
-bindsym Control+space exec --no-startup-id ~/.config/i3status/scripts/ibus_man.sh s
+bindsym $mod+space exec --no-startup-id ~/.config/i3status/scripts/ibus_man.sh s
 
 # ELAN touchscreen
 bindsym $mod+shift+t exec --no-startup-id ~/.config/i3status/scripts/elan.sh t

@@ -34,7 +34,7 @@ load {
 }
 
 cpu_temperature 0 {
-    format = "<span background='#CE7870'>  <span background='#e5e9f0'> Thermal: %degrees °C </span> </span>"
+    format = "<span background='#EAABBC'>  <span background='#e5e9f0'> Thermal: %degrees °C </span> </span>"
     path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
@@ -70,8 +70,8 @@ read_file touchpad {
 }
 
 read_file ibus {
-    format = "<span background='#a9b0bb'>  <span background='#e5e9f0' > %content </span> </span>"
-    format_bad = "<span background='#a9b0bb'>  <span background='#e5e9f0'> %title - %errno: %error"
+    format = "<span background='#B5AFBC'>  <span background='#e5e9f0' > %content </span> </span>"
+    format_bad = "<span background='#B5AFBC'>  <span background='#e5e9f0'> %title - %errno: %error"
     path = "/home/nopain/.config/i3status/status/ibus"
 }
 
@@ -82,8 +82,8 @@ read_file redshift {
 }
 
 read_file brightness {
-    format = "<span background='#E09F74'>  <span background='#e5e9f0'> Brightness: %content% </span> </span>"
-    format_bad = "<span background='#E09F74'>  <span background='#e5e9f0'> %title - %errno: %error"
+    format = "<span background='#F3BE95'>  <span background='#e5e9f0'> Brightness: %content% </span> </span>"
+    format_bad = "<span background='#F3BE95'>  <span background='#e5e9f0'> %title - %errno: %error"
     path = "/home/nopain/.config/i3status/status/brightness"
 }
 

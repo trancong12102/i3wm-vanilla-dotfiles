@@ -3,3 +3,7 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 export PATH="$PATH:/opt/pycharm-professional/bin"
 export GPG_TTY=$(tty)
+
+## Run custom i3status scripts at startup
+killall -q launch.sh
+bash $HOME/.config/i3status/scripts/launch.sh
