@@ -1,9 +1,9 @@
 general {
-    output_format = "i3bar"
-    colors = false
-    markup = pango
-    interval = 1
-    color_good = '#2f343f'
+  output_format = "i3bar"
+  colors = false
+  markup = pango
+  interval = 1
+  color_good = '#2f343f'
 	color_degraded = '#ebcb8b'
 	color_bad = '#ba5e57'
 }
@@ -13,6 +13,7 @@ order += "load"
 order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "memory"
+order += "ethernet enp0s25"
 order += "wireless wlp3s0"
 order += "read_file battery"
 order += "read_file elan"
@@ -24,79 +25,84 @@ order += "volume master"
 order += "tztime local"
 
 read_file uptime {
-    format = "<span background='#C6A89C'>  <span background='#e5e9f0'> Uptime: %content </span> </span>"
-    format_bad = "<span background='#C6A89C'>  <span background='#e5e9f0'> %title - %errno: %error"
-    path = "/home/nopain/.config/i3status/status/uptime"
+  format = "<span background='#ACCFD1'>     %content   </span>"
+  format_bad = "<span background='#ACCFD1'>    %title - %errno: %error  </span>"
+  path = "/home/nopain/.config/i3status/status/uptime"
 }
 
 load {
-    format = "<span background='#5e9cea'>  <span background='#e5e9f0'> System load: %1min </span> </span>"
+  format = "<span background='#F6D7C3'>     %1min   </span>"
 }
 
 cpu_temperature 0 {
-    format = "<span background='#EAABBC'>  <span background='#e5e9f0'> Thermal: %degrees °C </span> </span>"
-    path = "/sys/class/thermal/thermal_zone0/temp"
+  format = "<span background='#FCBDAB'>     %degrees °C   </span>"
+  path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
 cpu_usage {
-	format = "<span background='#FEB9B7'>  <span background='#e5e9f0'> CPU: %usage </span> </span>"	
+	format = "<span background='#ACBFEA'>     %usage   </span>"	
 }
 
 memory {
-	format = "<span background='#82acff'>  <span background='#e5e9f0'> RAM: %used </span> </span>"
+	format = "<span background='#D5ACC5'>     %used   </span>"
+}
+
+ethernet enp0s25 {
+  format_up = "<span background='#E7D3BF'>     %ip (%speed)   </span>"
+  format_down = "<span background='#E7D3BF'>     Down   </span>"
 }
 
 wireless wlp3s0 {
-    format_up = "<span background='#e3b692'>  <span background='#e5e9f0'>%quality at %essid </span> </span>"
-    format_down = "<span background='#e3b692'>  <span background='#e5e9f0'> Disconnected </span> </span>"
+  format_up = "<span background='#C8D5F6'>     %quality at %essid   </span>"
+  format_down = "<span background='#C8D5F6'>     Down   </span>"
 }
 
 read_file battery {
-    format = "%content"
-    format_bad = "<span background='#89c053'>  <span background='#e5e9f0'> %title - %errno: %error"
-    path = "/home/nopain/.config/i3status/status/battery"
+  format = "%content"
+  format_bad = "<span background='#89c053'>     %title - %errno: %error   </span>"
+  path = "/home/nopain/.config/i3status/status/battery"
 }
 
 read_file elan {
-    format = "<span background='#e8a5cc'>  <span background='#e5e9f0' > Touchscreen: %content </span> </span>"
-    format_bad = "<span background='#e8a5cc'>  <span background='#e5e9f0'> %title - %errno: %error"
-    path = "/home/nopain/.config/i3status/status/elan"
+  format = "<span background='#D5ACC5'>     %content   </span>"
+  format_bad = "<span background='#D5ACC5'>     %title - %errno: %error   </span>"
+  path = "/home/nopain/.config/i3status/status/elan"
 }
 
 read_file touchpad {
-    format = "<span background='#b9c0ea'>  <span background='#e5e9f0' > Touchpad: %content </span> </span>"
-    format_bad = "<span background='#b9c0ea'>  <span background='#e5e9f0'> %title - %errno: %error"
-    path = "/home/nopain/.config/i3status/status/touchpad"
+  format = "<span background='#b9c0ea'>     %content   </span>"
+  format_bad = "<span background='#b9c0ea'>     %title - %errno: %error   </span>"
+  path = "/home/nopain/.config/i3status/status/touchpad"
 }
 
 read_file ibus {
-    format = "<span background='#B5AFBC'>  <span background='#e5e9f0' > %content </span> </span>"
-    format_bad = "<span background='#B5AFBC'>  <span background='#e5e9f0'> %title - %errno: %error"
-    path = "/home/nopain/.config/i3status/status/ibus"
+  format = "<span background='#B5AFBC'>     %content   </span>"
+  format_bad = "<span background='#B5AFBC'>     %title - %errno: %error   </span>"
+  path = "/home/nopain/.config/i3status/status/ibus"
 }
 
 read_file redshift {
-    format = "%content"
-    format_bad = "<span background='#ffb997'>  <span background='#e5e9f0'> %title - %errno: %error"
-    path = "/home/nopain/.config/i3status/status/hueshift"
+  format = "<span background='#ffb4a2'>     %content   </span>"
+  format_bad = "<span background='#ffb4a2'>     %title - %errno: %error   </span>"
+  path = "/home/nopain/.config/i3status/status/hueshift"
 }
 
 read_file brightness {
-    format = "<span background='#F3BE95'>  <span background='#e5e9f0'> Brightness: %content% </span> </span>"
-    format_bad = "<span background='#F3BE95'>  <span background='#e5e9f0'> %title - %errno: %error"
-    path = "/home/nopain/.config/i3status/status/brightness"
+  format = "<span background='#F3BE95'>     %content%   </span>"
+  format_bad = "<span background='#F3BE95'>     %title - %errno: %error   </span>"
+  path = "/home/nopain/.config/i3status/status/brightness"
 }
 
 volume master {
-    format = "<span background='#B39FD5'>  <span background='#e5e9f0'> Vol: %volume </span> </span>"
-    format_muted = "<span background='#B39FD5'>  <span background='#e5e9f0'> Muted </span> </span>"
-    device = "default"
-    mixer = "Master"
-    mixer_idx = 0
+  format = "<span background='#B39FD5'>     %volume   </span>"
+  format_muted = "<span background='#B39FD5'>     Muted   </span>"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
 }
 
 tztime local {
-    format = "<span background='#98B08B'>  <span background='#e5e9f0'> %time </span> </span> "
-    format_time = "%a %d/%m %H:%M:%S"
+  format = "<span background='#98B08B'>     %time   </span> "
+  format_time = "%a %d/%m %H:%M:%S"
 }
 

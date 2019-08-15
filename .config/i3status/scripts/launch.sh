@@ -2,6 +2,7 @@
 
 ## created by nopain
 
+# . ~/.config/i3status/scripts/diskio.sh &
 . ~/.config/i3status/scripts/battery.sh &
 . ~/.config/i3status/scripts/brightness.sh &
 . ~/.config/i3status/scripts/touchpad.sh &

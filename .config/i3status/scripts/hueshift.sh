@@ -14,14 +14,11 @@ i3_out() {
     if [ "$shift" -eq "0" ];
     then
         state="OFF"
-        icon=""
     else
         state="$temp K"
-        icon=""
     fi
 
-    out="<span background='$BG'> $icon <span background='#e5e9f0'> $state </span> </span>"
-    echo $out > $HUE_FILE
+    echo $state > $HUE_FILE
 }
 
 write_config() {

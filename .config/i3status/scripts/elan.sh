@@ -11,9 +11,8 @@ state=$(xinput list-props "$DEVICE" | grep "$PROP" | grep -o "[01]$")
 
 
 i3_out() {
-    weight=$(echo $state | sed 's/1/bold/' | sed 's/0/normal/')
     t_state=$(echo $state | sed 's/0/OFF/' | sed 's/1/ON/')
-    echo "<span weight='$weight'>$t_state</span>" > $STATUS_FILE
+    echo $t_state > $STATUS_FILE
 }
 
 disable() {

@@ -17,17 +17,17 @@ switch() {
 	
 	current=$(ibus engine)
 	
-	echo $current > $STATUS_FILE
+	echo "$current" | sed 's/xkb:us::eng/EN/' | sed 's/Bamboo/VI/' > $STATUS_FILE
 }
 
 if [ "$1" = "i" ];
 then
-    current="xkb:us::eng"
-	echo $current > $STATUS_FILE
+  current="xkb:us::eng"
 	ibus engine $current
+	echo "$current" | sed 's/xkb:us::eng/EN/' | sed 's/Bamboo/VI/' > $STATUS_FILE
 fi
 
 if [ "$1" = "s" ];
 then
     switch
-fi
+fi 

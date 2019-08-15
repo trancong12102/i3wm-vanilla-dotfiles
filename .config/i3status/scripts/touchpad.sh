@@ -15,9 +15,8 @@ get_state() {
 
 i3_out() {
     get_state
-    weight=$(echo $touchpad | sed 's/1/bold/' | sed 's/0/normal/')
     state=$(echo $touchpad | sed 's/1/ON/' | sed 's/0/OFF/')
-    echo "<span weight='$weight'>$state</span>" > $STATUS_FILE
+    echo $state > $STATUS_FILE
 }
 
 auto_detect() {

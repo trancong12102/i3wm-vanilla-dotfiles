@@ -2,10 +2,18 @@
 
 ## created by nopain
 
-BGF_CHARGING="#C2CB81"
-BGF_NORMAL="#A2BDA2"
-BGF_LOW="#F1CBB5"
+BGF_CHARGING="#94D183"
+BG_CHARGING="#e5e9f0"
+
+BGF_NORMAL="#86BAC8"
+BG_NORMAL="#e5e9f0"
+
+BGF_LOW="#FDD4C1"
+BG_LOW="#FDD4C1"
+
 BGF_CRITICAL="#EAABBC"
+BG_CRITICAL="#EAABBC"
+
 
 STATUS_FILE=~/.config/i3status/status/battery
 
@@ -22,7 +30,7 @@ PER_LOW=20
 PER_CRIT=10
 
 i3_out() {
-	echo "<span background='$bgf'>   $icon  $batf%   </span>" > $STATUS_FILE
+	echo "<span background='$bgf'>  $icon  <span background='$bg'>  $batf%  </span> </span>" > $STATUS_FILE
 }
 
 get_ene() {
