@@ -113,8 +113,13 @@ POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
 POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=''
 POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=''
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv custom_os_icon ssh root_indicator dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv anaconda custom_os_icon ssh root_indicator dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status)
+
+## CONDA
+POWERLEVEL9K_ANACONDA_BACKGROUND='none'
+POWERLEVEL9K_ANACONDA_FOREGROUND='#96BDC4'
+POWERLEVEL9K_ANACONDA_SHOW_PYTHON_VERSION=false
 
 ## VIRTUALENV
 POWERLEVEL9K_VIRTUALENV_BACKGROUND='none'
@@ -207,7 +212,7 @@ ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg='#f5cd79'
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg='#f5cd79'
 ZSH_HIGHLIGHT_STYLES[assign]='#F7C6BE'
 
-## 
+############################################################
 alias ls="lsd -l --group-dirs first --color=auto"
 # alias neofetch="neofetch | lolcat -a -s 3000"
 alias pacman="pacman --color=auto"
@@ -218,7 +223,22 @@ PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 PS1='[\u@\h \W]\$ '
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+    source /etc/profile.d/vte.sh
 fi
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/nopain/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/nopain/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/nopain/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/nopain/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

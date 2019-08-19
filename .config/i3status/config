@@ -13,6 +13,7 @@ order += "load"
 order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "memory"
+order += "disk /"
 order += "ethernet enp0s25"
 order += "wireless wlp3s0"
 order += "read_file battery"
@@ -25,8 +26,8 @@ order += "volume master"
 order += "tztime local"
 
 read_file uptime {
-  format = "<span background='#ACCFD1'>     %content   </span>"
-  format_bad = "<span background='#ACCFD1'>    %title - %errno: %error  </span>"
+  format = "<span background='#96BDC4'>     %content   </span>"
+  format_bad = "<span background='#96BDC4'>    %title - %errno: %error  </span>"
   path = "/home/nopain/.config/i3status/status/uptime"
 }
 
@@ -45,6 +46,10 @@ cpu_usage {
 
 memory {
 	format = "<span background='#D5ACC5'>     %used   </span>"
+}
+
+disk / {
+  format = "<span background='#B5AFBC'>     %percentage_used   </span>"
 }
 
 ethernet enp0s25 {
@@ -102,7 +107,7 @@ volume master {
 }
 
 tztime local {
-  format = "<span background='#98B08B'>     %time   </span> "
+  format = "<span background='#98B08B'>     %time   </span> "
   format_time = "%a %d/%m %H:%M:%S"
 }
 
